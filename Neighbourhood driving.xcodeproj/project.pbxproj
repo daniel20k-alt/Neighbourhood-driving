@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		EE03529824F59CE60069E0A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE03529724F59CE60069E0A0 /* AppDelegate.swift */; };
 		EE03529A24F59CE60069E0A0 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = EE03529924F59CE60069E0A0 /* GameScene.sks */; };
-		EE03529C24F59CE60069E0A0 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = EE03529B24F59CE60069E0A0 /* Actions.sks */; };
 		EE03529E24F59CE60069E0A0 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE03529D24F59CE60069E0A0 /* GameScene.swift */; };
 		EE0352A024F59CE60069E0A0 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE03529F24F59CE60069E0A0 /* GameViewController.swift */; };
 		EE0352A324F59CE70069E0A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE0352A124F59CE70069E0A0 /* Main.storyboard */; };
@@ -21,7 +20,6 @@
 		EE03529424F59CE60069E0A0 /* Neighbourhood driving.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Neighbourhood driving.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE03529724F59CE60069E0A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE03529924F59CE60069E0A0 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		EE03529B24F59CE60069E0A0 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		EE03529D24F59CE60069E0A0 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		EE03529F24F59CE60069E0A0 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		EE0352A224F59CE70069E0A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -62,7 +60,6 @@
 			children = (
 				EE03529724F59CE60069E0A0 /* AppDelegate.swift */,
 				EE03529924F59CE60069E0A0 /* GameScene.sks */,
-				EE03529B24F59CE60069E0A0 /* Actions.sks */,
 				EE03529D24F59CE60069E0A0 /* GameScene.swift */,
 				EE03529F24F59CE60069E0A0 /* GameViewController.swift */,
 				EE0352A124F59CE70069E0A0 /* Main.storyboard */,
@@ -135,7 +132,6 @@
 				EE03529A24F59CE60069E0A0 /* GameScene.sks in Resources */,
 				EE0352A524F59CEC0069E0A0 /* Assets.xcassets in Resources */,
 				EE0352A824F59CEC0069E0A0 /* LaunchScreen.storyboard in Resources */,
-				EE03529C24F59CE60069E0A0 /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,7 +298,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.MeerkatWorks.Neighbourhood-driving";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -320,7 +316,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.MeerkatWorks.Neighbourhood-driving";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
