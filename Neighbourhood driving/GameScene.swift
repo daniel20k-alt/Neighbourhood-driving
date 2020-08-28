@@ -19,6 +19,8 @@ enum CollisionTypes: UInt32 {
 
 class GameScene: SKScene {
     
+    var player: SKSpriteNode!
+    
     override func didMove(to view: SKView) {
         let background = SKSpriteNode(imageNamed: "background")
             background.position = CGPoint(x: 512, y: 384)
@@ -27,6 +29,9 @@ class GameScene: SKScene {
         addChild(background)
             
         loadLevel()
+        createPlayer()
+        
+        physicsWorld.gravity = .zero
         
     }
     
@@ -138,5 +143,19 @@ class GameScene: SKScene {
                 
             }
         }
+    }
+    
+    func createPlayer() {
+        player = SKSpriteNode(imageNamed: "moto_1")
+        player.position = CGPoint(x: 96, y: 672) //initial position for level 1 only
+        
+        player.physicsBody = SKPhysicsBody(circleOfRadius: player.size.width / 2)
+        player.physicsBody?.allowsRotation = false
+        player.physicsBody?.linearDamping = 0.5
+        
+        player.physicsBody?.categoryBitMask = CollisionTypes.player.rawValue
+        player.physicsBody?.contactTestBitMask = CollisionTypes.star.rawValue | CollisionTypes.fuel.rawValue | CollisionTypes.hole.rawValue | CollisionTypes.finish.rawValue
+        player.physicsBody?.collisionBitMask = CollisionTypes.wall.rawValue
+        addChild(player)
     }
 }
