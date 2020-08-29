@@ -15,6 +15,7 @@
 		EE0352A524F59CEC0069E0A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE0352A424F59CEC0069E0A0 /* Assets.xcassets */; };
 		EE0352A824F59CEC0069E0A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE0352A624F59CEC0069E0A0 /* LaunchScreen.storyboard */; };
 		EE0352B024F7B0B70069E0A0 /* level1.txt in Resources */ = {isa = PBXBuildFile; fileRef = EE0352AF24F7B0B70069E0A0 /* level1.txt */; };
+		EE0352B424FA43080069E0A0 /* levelNew in Resources */ = {isa = PBXBuildFile; fileRef = EE0352B324FA43080069E0A0 /* levelNew */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		EE0352A724F59CEC0069E0A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EE0352A924F59CEC0069E0A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE0352AF24F7B0B70069E0A0 /* level1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = level1.txt; path = "../../../../HackingWithSwift-Downloads/Classic/project26-files/Content/level1.txt"; sourceTree = "<group>"; };
+		EE0352B324FA43080069E0A0 /* levelNew */ = {isa = PBXFileReference; lastKnownFileType = text; path = levelNew; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				EE0352A624F59CEC0069E0A0 /* LaunchScreen.storyboard */,
 				EE0352A924F59CEC0069E0A0 /* Info.plist */,
 				EE0352AF24F7B0B70069E0A0 /* level1.txt */,
+				EE0352B324FA43080069E0A0 /* levelNew */,
 			);
 			path = "Neighbourhood driving";
 			sourceTree = "<group>";
@@ -135,6 +138,7 @@
 				EE0352A324F59CE70069E0A0 /* Main.storyboard in Resources */,
 				EE03529A24F59CE60069E0A0 /* GameScene.sks in Resources */,
 				EE0352A524F59CEC0069E0A0 /* Assets.xcassets in Resources */,
+				EE0352B424FA43080069E0A0 /* levelNew in Resources */,
 				EE0352A824F59CEC0069E0A0 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
