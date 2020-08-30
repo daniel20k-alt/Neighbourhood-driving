@@ -52,7 +52,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         fuelLabel = SKLabelNode(fontNamed: "Chalkduster")
         fuelLabel.text = "Fuel left: 0"
         fuelLabel.horizontalAlignmentMode = .left
-        fuelLabel.position = CGPoint(x: 16, y:16)
+        fuelLabel.position = CGPoint(x: 50, y:16)
         fuelLabel.zPosition = 2
         addChild(fuelLabel)
         
