@@ -30,6 +30,7 @@
 		EE0352A924F59CEC0069E0A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE0352AF24F7B0B70069E0A0 /* level1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = level1.txt; path = "../../../../HackingWithSwift-Downloads/Classic/project26-files/Content/level1.txt"; sourceTree = "<group>"; };
 		EE0352B324FA43080069E0A0 /* levelNew */ = {isa = PBXFileReference; lastKnownFileType = text; path = levelNew; sourceTree = "<group>"; };
+		EE3F4E9124FC02DB00D1C26A /* HVD_Comic_Serif_Pro.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = HVD_Comic_Serif_Pro.otf; path = "../../../../../Downloads/HVD-Comic-Serif-Pro/HVD_Comic_Serif_Pro.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +71,7 @@
 				EE0352A424F59CEC0069E0A0 /* Assets.xcassets */,
 				EE0352A624F59CEC0069E0A0 /* LaunchScreen.storyboard */,
 				EE0352A924F59CEC0069E0A0 /* Info.plist */,
+				EE3F4E9124FC02DB00D1C26A /* HVD_Comic_Serif_Pro.otf */,
 				EE0352AF24F7B0B70069E0A0 /* level1.txt */,
 				EE0352B324FA43080069E0A0 /* levelNew */,
 			);

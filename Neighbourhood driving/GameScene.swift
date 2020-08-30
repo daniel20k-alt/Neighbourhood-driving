@@ -27,18 +27,19 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var scoreLabel: SKLabelNode!
     var fuelLabel: SKLabelNode! //make it an animation
+    var fuelTimer: Timer?
     
     var score = 0 {
-        didSet {
-            scoreLabel.text = "Score: \(score)"
-        }
-    }
+                didSet {
+                    scoreLabel.text = "Score: \(score)"
+                }
+            }
     
-    var fuel = 0 {
-        didSet {
-            scoreLabel.text = "Fuel left: \(fuel)"
-        }
-    }
+    var fuel = 15 {
+                didSet {
+                    fuelLabel.text = "Fuel left: \(fuelTimer) liters"
+                }
+            }
     
     override func didMove(to view: SKView) {
         let background = SKSpriteNode(imageNamed: "background")
@@ -57,12 +58,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         fuelLabel = SKLabelNode(fontNamed: "Chalkduster")
         fuelLabel.text = "Fuel left: 0"
         fuelLabel.horizontalAlignmentMode = .left
-        fuelLabel.position = CGPoint(x: 50, y:16)
+        fuelLabel.position = CGPoint(x: 300, y:16)
         fuelLabel.zPosition = 2
         addChild(fuelLabel)
         
         loadLevel()
         createPlayer()
+        updateFuelLevel()
         
         physicsWorld.gravity = .zero
         physicsWorld.contactDelegate = self //telling us when a collision happened
@@ -76,7 +78,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         guard let levelURL = Bundle.main.url(forResource: "level1", withExtension: "txt") else {
             fatalError("Could not find level1.txt in the app bundle.")
         }
-        
+ 
         guard let levelString = try? String(contentsOf: levelURL) else {
             fatalError("Could not load level1.txt from the app bundle.")
         }
@@ -177,6 +179,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     fatalError("Uknown level letter: \(letter)")
                 }
             }
+            
+            if fuelTimer == nil {
+                fuelTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+                   
+                    if self.fuel == 0 {
+                        self.isGameOver = true
+                    } else if self.fuel <= 60 {
+                        self.fuel -= 1
+                        self.updateFuelLevel()
+                    }
+                }
+            }
         }
     }
     
@@ -206,6 +220,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         player.physicsBody?.collisionBitMask = CollisionTypes.wall.rawValue
         
         addChild(player)
+    }
+    
+    func updateFuelLevel() {
+        let fuelTank = fuel
+        fuelLabel?.text = "Fuel left: \(String(format: "%02d", fuelTank))"
     }
     
     //Allowing the player to move the motorcycle with touches
@@ -243,7 +262,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     func didBegin(_ contact: SKPhysicsContact) {
         guard let nodeA = contact.bodyA.node else { return }
-           guard let nodeB = contact.bodyB.node else { return }
+        guard let nodeB = contact.bodyB.node else { return }
         
         if nodeA == player {
             playerCollided(with: nodeB)
@@ -271,11 +290,27 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             node.removeFromParent()
             score += 1
         } else if node.name == "fuel" {
-            //add code to fill fuel bar
+            
             node.removeFromParent()
-            fuel += 1
+            fuel += 10
         } else if node.name == "finish" {
             //add code to move to next level
+            
+            fuelTimer?.invalidate()
+            fuelTimer = nil
+            
+            isGameOver = true
+    
+            score = 0
+            fuel = 15
+            
+            loadLevel()
+            createPlayer()
+            updateFuelLevel()
+            
         }
     }
+    
+    
+    
 }
