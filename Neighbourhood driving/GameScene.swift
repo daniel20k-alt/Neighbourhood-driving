@@ -26,12 +26,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var isGameOver = false
     
     var scoreLabel: SKLabelNode!
-    
     var fuelLabel: SKLabelNode! //make it an animation
     
     var score = 0 {
         didSet {
             scoreLabel.text = "Score: \(score)"
+        }
+    }
+    
+    var fuel = 0 {
+        didSet {
+            scoreLabel.text = "Fuel left: \(fuel)"
         }
     }
     
@@ -268,7 +273,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         } else if node.name == "fuel" {
             //add code to fill fuel bar
             node.removeFromParent()
-            score += 1
+            fuel += 1
         } else if node.name == "finish" {
             //add code to move to next level
         }
